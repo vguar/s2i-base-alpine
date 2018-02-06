@@ -1,5 +1,5 @@
 
-IMAGE_NAME = s2i-core-alpine
+IMAGE_NAME = s2i-base-alpine
 
 .PHONY: build
 build:

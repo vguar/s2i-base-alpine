@@ -1,13 +1,13 @@
 sudo: required
+
 language: ruby
+
 services:
   - docker
 
 script:
-- docker build -t vguar/2i-base-alpine  .
+  - docker build -t vguar/2i-base-alpine  .
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker push vguar/s2i-base-alpine;
-    fi
+  -  docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  -  docker push vguar/s2i-base-alpine
